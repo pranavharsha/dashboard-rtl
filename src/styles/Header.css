@@ -1,0 +1,12 @@
+.navBrand {
+    color: silver !important;
+    font-size: 1.3rem !important;
+}
+
+.navBar .nav-item {
+    margin-right: 1.3rem !important;
+}
+
+.navBar .nav-item a {
+    color: white !important;
+}
