@@ -10,3 +10,20 @@
 .navBar .nav-item a {
     color: white !important;
 }
+
+.navRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.userNameDiv{
+    flex: 1;
+    color: white;
+    text-transform: capitalize;
+    margin-right: 1rem;
+}
+
+.logoutDiv{
+    flex: 1;
+}

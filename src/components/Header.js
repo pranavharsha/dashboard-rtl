@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
-    Navbar, NavbarBrand, Nav, NavItem
+    Navbar, NavbarBrand, Nav, NavItem, Button
 } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import '../styles/Header.css';
+import { logoutAction } from '../actions/loginActions';
 
 class Header extends Component {
     constructor(props) {
@@ -32,6 +33,16 @@ class Header extends Component {
                             <Link to="/">Users</Link>
                         </NavItem>
                     </Nav>
+                    {
+                        this.props.islogin ? (
+                            <div className="navRight ml-auto">
+                                <div className="userNameDiv">{this.props.userDetails.name}</div>
+                                <div className="logoutDiv">
+                                    <Button className="btn logoutBtn" onClick={() => this.props.logoutAction()}>Logout</Button>
+                                </div>
+                            </div>
+                        ) : undefined
+                    }
                 </Navbar>
             </React.Fragment>
         )
@@ -39,9 +50,10 @@ class Header extends Component {
 }
 
 const mapStateToProps = state => ({
-
+    islogin: state.login.islogin,
+    userDetails: state.login.userDetails,
 });
 
 export default connect(mapStateToProps, {
-
+    logoutAction
 })(Header);
