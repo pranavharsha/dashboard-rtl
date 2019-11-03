@@ -20,11 +20,11 @@ class MembersTable extends Component {
         let retList = secList.map((item, ix) => {
             if (parseInt(list[ix]) >= 0) {
                 return (
-                    <td key={curIx + "td" + ix}>{list[ix]}</td>
+                    <td className="memSec" key={curIx + "td" + ix}>{list[ix]}</td>
                 )
             } else {
                 return (
-                    <td key={curIx + "td" + ix}>{item}</td>
+                    <td className="memSec" key={curIx + "td" + ix}>{item}</td>
                 )
             }
         });
@@ -40,11 +40,11 @@ class MembersTable extends Component {
         const tableBody = this.props.membersdata.map((item, ix) => {
             return (
                 <tr key={item.id}>
-                    <td>{item.id}</td>
-                    <td>{item.name}</td>
+                    <td className="memId">{item.id}</td>
+                    <td className="memName">{item.name}</td>
                     {this.sectionsBodyRender(item.sections, ix)}
-                    <td>{FormatDate(parseInt(item.joindate), true)}</td>
-                    <td>{item.status}</td>
+                    <td className="memDate">{FormatDate(parseInt(item.joindate), true)}</td>
+                    <td className="memSts">{item.status}</td>
                     <td></td>
                 </tr>
             )

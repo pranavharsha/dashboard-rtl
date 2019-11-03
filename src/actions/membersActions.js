@@ -1,5 +1,5 @@
 import {
-    SET_MEMBERS_DATA
+    SET_MEMBERS_DATA, FILTER_MEMBERS_DATA
 } from './types';
 
 export function getMembersDataAction() {
@@ -18,6 +18,15 @@ export function getMembersDataAction() {
             });
         }).catch((data) => {
             console.log(data);
+        });
+    }
+}
+
+export function filterMembersDataAction(value) {
+    return function (dispatch) {
+        dispatch({
+            type: FILTER_MEMBERS_DATA,
+            payload: { value: value }
         });
     }
 }
