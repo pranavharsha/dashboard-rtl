@@ -6,12 +6,12 @@ Please follow below instructions to run the application.
 
 Before following below steps, you need to make sure that node and npm are installed on the machine.
 
-##step - 1
+### step - 1
 Run Command - npm install
 
 This will install all the necessary modules.
 
-##step - 2
+### step - 2
 Run Command - npm start
 
 This will start the application and it is opened in http://localhost:3000
