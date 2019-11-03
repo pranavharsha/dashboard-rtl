@@ -19,28 +19,32 @@ class Header extends Component {
                     <NavbarBrand className="navBrand">
                         Admin Section
                     </NavbarBrand>
-                    <Nav className="ml-2 navBar" navbar>
-                        <NavItem className="">
-                            <Link to="/">Members</Link>
-                        </NavItem>
-                        <NavItem className="">
-                            <Link to="/">Products</Link>
-                        </NavItem>
-                        <NavItem className="">
-                            <Link to="/">Reporting</Link>
-                        </NavItem>
-                        <NavItem className="">
-                            <Link to="/">Users</Link>
-                        </NavItem>
-                    </Nav>
                     {
                         this.props.islogin ? (
-                            <div className="navRight ml-auto">
-                                <div className="userNameDiv">{this.props.userDetails.name}</div>
-                                <div className="logoutDiv">
-                                    <Button className="btn logoutBtn" onClick={() => this.props.logoutAction()}>Logout</Button>
+                            <React.Fragment>
+                                <Nav className="ml-2 navBar" navbar>
+                                    <NavItem className="">
+                                        <Link to="/home">Members</Link>
+                                    </NavItem>
+                                    <NavItem className="">
+                                        <Link to="/products">Products</Link>
+                                    </NavItem>
+                                    <NavItem className="">
+                                        <Link to="/reporting">Reporting</Link>
+                                    </NavItem>
+                                    <NavItem className="">
+                                        <Link to="/users">Users</Link>
+                                    </NavItem>
+                                </Nav>
+
+                                <div className="navRight ml-auto">
+                                    <div className="userNameDiv">{this.props.userDetails.name}</div>
+                                    <div className="logoutDiv">
+                                        <Button className="btn logoutBtn" onClick={() => this.props.logoutAction()}>Logout</Button>
+                                    </div>
                                 </div>
-                            </div>
+                                
+                            </React.Fragment>
                         ) : undefined
                     }
                 </Navbar>

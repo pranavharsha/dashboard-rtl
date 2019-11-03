@@ -4,7 +4,7 @@
 }
 
 .navBar .nav-item {
-    margin-right: 1.3rem !important;
+    margin: 0rem 2rem !important;
 }
 
 .navBar .nav-item a {
@@ -21,7 +21,7 @@
     flex: 1;
     color: white;
     text-transform: capitalize;
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 .logoutDiv{
