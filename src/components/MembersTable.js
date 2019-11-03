@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {
     Col, Row, Button, Container, Table
 } from 'reactstrap';
-import { getMembersDataAction } from '../actions/membersActions';
+import { getMembersDataAction, deleteMembersDataAction } from '../actions/membersActions';
 import { FormatDate } from '../Utils';
 
 class MembersTable extends Component {
@@ -45,7 +45,12 @@ class MembersTable extends Component {
                     {this.sectionsBodyRender(item.sections, ix)}
                     <td className="memDate">{FormatDate(parseInt(item.joindate), true)}</td>
                     <td className="memSts">{item.status}</td>
-                    <td></td>
+                    <td>
+                        <Button outline className="deleteMmeberBtn"
+                            onClick={() => this.props.deleteMembersDataAction(item.id)}>
+                            Delete
+                        </Button>
+                    </td>
                 </tr>
             )
         });
@@ -81,5 +86,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, {
-    getMembersDataAction
+    getMembersDataAction, deleteMembersDataAction
 })(MembersTable);

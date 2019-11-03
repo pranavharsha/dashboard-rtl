@@ -20,7 +20,7 @@ export const email = value =>
 
 export const password = value =>
     value && !/^(?=.*[\d])(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*])[\w!@#$%^&*]{8,}$/.test(value)
-        ? 'Your password is minimum of 8 characters, contains atleast 1 character from uppercase, lowercase, number and symbol':
+        ? 'Your password is minimum of 8 characters, contains atleast 1 character from uppercase, lowercase, number and symbol' :
         undefined
 
 export const alphaNumeric = value =>
@@ -47,7 +47,6 @@ export const renderTextField = (
             </Col>
         </React.Fragment>
     );
-
 
 // Reusable functions
 

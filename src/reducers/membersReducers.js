@@ -1,5 +1,5 @@
 import {
-    SET_MEMBERS_DATA, FILTER_MEMBERS_DATA
+    SET_MEMBERS_DATA, FILTER_MEMBERS_DATA, ADD_MEMBERS_DATA, DELETE_MEMBERS_DATA
 } from '../actions/types';
 
 const initialState = {
@@ -26,6 +26,22 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 membersdata: filteredData
+            }
+        case ADD_MEMBERS_DATA:
+            let newData = [...state.masterMembersdata];
+            newData.push(action.payload.obj);
+            return {
+                ...state,
+                masterMembersdata: [...newData],
+                membersdata: newData
+            }
+        case DELETE_MEMBERS_DATA:
+            let newFilteredData = [...state.masterMembersdata];
+            newFilteredData = newFilteredData.filter((item, ix) => item.id != action.payload.id);
+            return {
+                ...state,
+                masterMembersdata: [...newFilteredData],
+                membersdata: newFilteredData
             }
         default:
             return state;

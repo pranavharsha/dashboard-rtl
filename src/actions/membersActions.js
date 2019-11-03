@@ -1,5 +1,5 @@
 import {
-    SET_MEMBERS_DATA, FILTER_MEMBERS_DATA
+    SET_MEMBERS_DATA, FILTER_MEMBERS_DATA, ADD_MEMBERS_DATA, DELETE_MEMBERS_DATA
 } from './types';
 
 export function getMembersDataAction() {
@@ -27,6 +27,24 @@ export function filterMembersDataAction(value) {
         dispatch({
             type: FILTER_MEMBERS_DATA,
             payload: { value: value }
+        });
+    }
+}
+
+export function addMembersDataAction(obj) {
+    return function (dispatch) {
+        dispatch({
+            type: ADD_MEMBERS_DATA,
+            payload: { obj: obj }
+        });
+    }
+}
+
+export function deleteMembersDataAction(id) {
+    return function (dispatch) {
+        dispatch({
+            type: DELETE_MEMBERS_DATA,
+            payload: { id: id }
         });
     }
 }
