@@ -64,7 +64,7 @@ export function FormatDate(field, IsTime = false, NoYear = false) // Formating D
     Mins = Mins < 10 ? "0" + Mins : Mins;
     //var Tz = fielddate.
     if (IsTime) {
-        return Months[Month] + " " + Day + " " + Year + "</br>" + Hours + ":" + Mins + " EST";
+        return Months[Month] + " " + Day + " " + Year + " " + Hours + ":" + Mins;
     }
     else {
         if (NoYear) {

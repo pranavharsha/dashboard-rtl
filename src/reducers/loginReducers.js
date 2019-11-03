@@ -3,7 +3,7 @@ import {
 } from '../actions/types';
 
 const initialState = {
-    islogin: false,
+    islogin: true,
     userDetails: {},
 }
 
